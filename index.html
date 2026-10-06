@@ -1,10 +1,32 @@
-<!DOCTYPE html>
+yle><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>RIDER X PRATAP Bike Accessories</title>
+
+
+
+body {
+    cursor: none;
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #a8e600;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 8px #a8e600,
+        0 0 18px rgba(168, 230, 0, 0.7);
+}
+
 
 <style>
 *{
@@ -15,13 +37,45 @@
 
 html{
     scroll-behavior:smooth;
+
+    
 }
+
+
+
+
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#a8e600;
-    color:white;
+    background:#2be606;
+    color:rgb(236, 14, 14);
     overflow-x:hidden;
+}
+
+/* CUSTOM MOUSE DOT */
+
+body {
+    cursor: none;
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+
+    background: #a8e600;
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 99999;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 8px #a8e600,
+        0 0 18px rgba(168, 230, 0, 0.7);
+
+    transition: transform 0.08s linear;
 }
 
 /* ================= NAVBAR ================= */
@@ -212,7 +266,7 @@ body{
 
     font-weight:900;
 
-    letter-spacing:-3px;
+    letter-spacing:-6px;
 }
 
 .hero h1 .green{
@@ -426,14 +480,9 @@ body{
 .about-image{
     min-height:390px;
 
-    border:2px solid #a8e600;
+    border:2px solid #e6dede;
 
-    background:
-        linear-gradient(
-            rgba(10,15,20,.25),
-            rgba(10,15,20,.25)
-        ),
-        url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1100&q=80");
+    background-image:url("images/mybike.jpg");
 
     background-size:cover;
     background-position:center;
@@ -778,6 +827,118 @@ footer{
         grid-template-columns:1fr;
     }
 }
+
+/* ================= CHECKOUT ================= */
+
+.checkout{
+    padding:70px 20px;
+    background:
+        linear-gradient(135deg, #0b0f14, #111722);
+    border-top:1px solid #252d38;
+    text-align:center;
+}
+
+.checkout h2{
+    margin-bottom:35px;
+
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:1px;
+
+    color:#ffffff;
+}
+
+#cartItems{
+    width:100%;
+    max-width:700px;
+    margin:0 auto;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 22px;
+    margin:10px 0;
+
+    background:#171d26;
+
+    border:1px solid #29313d;
+    border-left:3px solid #ff2020;
+
+    border-radius:6px;
+
+    color:#ffffff;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.18);
+}
+
+.cart-item span:last-child{
+    color:#9cff00;
+    font-weight:900;
+}
+
+.total{
+    max-width:700px;
+    margin:30px auto;
+
+    padding:20px;
+
+    background:#0d1218;
+
+    border:1px solid #29313d;
+    border-radius:6px;
+
+    font-size:24px;
+    font-weight:900;
+
+    color:#ffffff;
+}
+
+#totalAmount{
+    color:#ffa600;
+}
+
+.pay-btn{
+    padding:16px 38px;
+
+    border:none;
+    border-radius:4px;
+
+    background:linear-gradient(
+        135deg,
+        #ff2020,
+        #d90000
+    );
+
+    color:white;
+
+    font-size:15px;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255,32,32,.25);
+
+    transition:.3s;
+}
+
+.pay-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(255,32,32,.4);
+}
+
+.empty-cart{
+    color:#8b949e;
+    padding:25px;
+}
+
 </style>
 </head>
 
@@ -840,13 +1001,13 @@ footer{
         <h1>
 
             <span class="red">
-                RIDER X
+            PRATAP & OFFICIAL
             </span>
 
             <br>
 
             <span class="black">
-                OFFICIAL
+                WEBSITE
             </span>
 
         </h1>
@@ -854,8 +1015,10 @@ footer{
 
         <p class="hero-desc">
 
+            DEVLOPER = OG - SHIV
+
             UNLOCK THE ULTIMATE
-            <strong style="color:#008ae6;">
+            <strong style="color:#9d00e6;">
                 BIKING EXPERIENCE
             </strong>
 
@@ -877,12 +1040,31 @@ footer{
 
         <div class="bike-glow"></div>
 
-        <img
-            class="hero-bike"
-            src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=85"
-            alt="Bike"
-        >
+        <video
+    class="hero-bike"
+    autoplay
+    muted
+    loop
+    playsinline
+    oncontextmenu="return false;"
+>
+    <source src="videos/bike.mp4" type="video/mp4">
+</video>
+<script>
+const video = document.querySelector(".hero-bike");
 
+video.addEventListener("click", function () {
+
+    if (video.muted) {
+        video.muted = false;
+        video.volume = 1;
+    } else {
+        video.muted = true;
+    }
+
+    video.play();
+});
+</script>
     </div>
 
 </section>
@@ -919,7 +1101,7 @@ footer{
         </div>
 
         <div class="category">
-            <span>BIKE PARTS</span>
+            <span>RIDING SHOES</span>
         </div>
 
     </div>
@@ -958,9 +1140,9 @@ footer{
 
             <h2>
 
-                RIDER X PRATAP
+                SHIV X PRATAP
                 <span>
-                    DOMINANCE
+                    OFFICIAL WEBSITE
                 </span>
 
             </h2>
@@ -1024,10 +1206,9 @@ footer{
 
             <div class="product-img">
 
-                <img
-                    src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=900&q=80"
-                    alt="Helmet"
-                >
+                <div class="product-img">
+    <img src="images/helmet.png" alt="Premium Helmet">
+</div>
 
             </div>
 
@@ -1040,12 +1221,12 @@ footer{
                 </p>
 
                 <p class="price">
-                    ₹2,499
+                    ₹2,699
                 </p>
 
-                <button class="buy-btn" onclick="addCart()">
-                    ADD TO CART
-                </button>
+                <button class="buy-btn" onclick="addToCart('Premium Helmet', 2699)">
+    ADD TO CART
+</button>
 
             </div>
 
@@ -1057,8 +1238,10 @@ footer{
             <div class="product-img">
 
                 <img
-                    src="https://images.unsplash.com/photo-1591328833209-e0a7c33b4f0e?auto=format&fit=crop&w=900&q=80"
-                    alt="Gloves"
+                    
+                         src="images/gloves.jpg"
+                         alt="Riding Gloves"
+>
                 >
 
             </div>
@@ -1072,12 +1255,12 @@ footer{
                 </p>
 
                 <p class="price">
-                    ₹899
+                    ₹349
                 </p>
 
-                <button class="buy-btn" onclick="addCart()">
-                    ADD TO CART
-                </button>
+                <button class="buy-btn" onclick="addToCart('Riding Gloves', 349)">
+    ADD TO CART
+</button>
 
             </div>
 
@@ -1089,9 +1272,9 @@ footer{
             <div class="product-img">
 
                 <img
-                    src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=900&q=80"
-                    alt="Lights"
-                >
+    src="images/led-light.png"
+    alt="fog-lamp-led-light-set of two"
+>
 
             </div>
 
@@ -1104,12 +1287,12 @@ footer{
                 </p>
 
                 <p class="price">
-                    ₹599
+                    ₹469-ONLY
                 </p>
 
-                <button class="buy-btn" onclick="addCart()">
-                    ADD TO CART
-                </button>
+                <button class="buy-btn" onclick="addToCart('LED Bike Lights', 469)">
+    ADD TO CART
+</button>
 
             </div>
 
@@ -1121,10 +1304,9 @@ footer{
             <div class="product-img">
 
                 <img
-                    src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=900&q=80"
-                    alt="Bike Accessory"
-                >
-
+    src="images/legguard.jpg"
+    alt="Leg Guard"
+>
             </div>
 
             <div class="product-content">
@@ -1136,12 +1318,12 @@ footer{
                 </p>
 
                 <p class="price">
-                    ₹1,499
+                    ₹1,349
                 </p>
 
-                <button class="buy-btn" onclick="addCart()">
-                    ADD TO CART
-                </button>
+                <button class="buy-btn" onclick="addToCart('Bike Accessories', 1349)">
+    ADD TO CART
+</button>
 
             </div>
 
@@ -1169,6 +1351,11 @@ footer{
         Email: support@fg254368@gmail.com
     </p>
 
+    <p>
+        Devloper: OG - SHIV 
+    </p>
+
+
 </section>
 
 
@@ -1193,6 +1380,82 @@ function addCart(){
 
 </script>
 
+<div class="cursor-dot" id="cursorDot"></div>
 
+<script>
+const cursorDot = document.getElementById("cursorDot");
+
+document.addEventListener("mousemove", function(e) {
+    cursorDot.style.left = e.clientX + "px";
+    cursorDot.style.top = e.clientY + "px";
+});
+</script>
+<script>
+
+let cartItems = [];
+let totalAmount = 0;
+
+function addToCart(name, price) {
+
+    cartItems.push({
+        name: name,
+        price: price
+    });
+
+    totalAmount += price;
+
+    document.getElementById("cartCount").innerText = cartItems.length;
+
+    document.getElementById("cartItems").innerHTML = cartItems.map(item => `
+        <div class="cart-item">
+            <span>${item.name}</span>
+            <span>₹${item.price}</span>
+        </div>
+    `).join("");
+
+    document.getElementById("totalAmount").innerText = totalAmount;
+
+    document.getElementById("checkout").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+function proceedToPayment() {
+
+    if (cartItems.length === 0) {
+        alert("Please add a product first.");
+        return;
+    }
+
+    alert(
+        "Order ready!\n\n" +
+        "Total Amount: ₹" + totalAmount +
+        "\n\nPayment gateway will open here."
+    );
+
+}
+
+</script>
+
+<section id="checkout" class="checkout">
+
+    <h2>YOUR ORDER</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="total">
+        Total: ₹<span id="totalAmount">0</span>
+    </div>
+
+    <button class="pay-btn" onclick="proceedToPayment()">
+        PROCEED TO PAYMENT
+    </button>
+
+
+    
+   
+
+</section>
 </body>
 </html>
