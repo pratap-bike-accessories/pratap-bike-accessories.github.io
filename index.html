@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RIDER X PRATAP Bike Accessories</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#a8e600;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:82px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 50px;
+
+    background:rgba(4,6,10,.96);
+
+    border-bottom:2px solid #a8e600;
+
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-symbol{
+    width:45px;
+    height:45px;
+
+    background:linear-gradient(135deg,#c8ff36,#6c9800);
+
+    clip-path:polygon(
+        50% 0%,
+        100% 25%,
+        82% 78%,
+        50% 100%,
+        18% 78%,
+        0% 25%
+    );
+}
+
+.logo-text{
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
+
+.logo-text span{
+    color:#a8e600;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#fff;
+    font-size:15px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#a8e600;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.search{
+    font-size:22px;
+    cursor:pointer;
+}
+
+.cart{
+    font-size:22px;
+    cursor:pointer;
+}
+
+.cart-count{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#a8e600;
+    color:#000;
+
+    font-size:11px;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:760px;
+
+    margin-top:82px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:90px 8%;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 80% 40%,rgba(157,227,0,.15),transparent 30%),
+    linear-gradient(120deg,#091018,#080c13 60%,#11151d);
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    right:-180px;
+    top:40px;
+
+    background:radial-gradient(
+        circle,
+        rgba(165,230,0,.09),
+        transparent 65%
+    );
+
+    pointer-events:none;
+}
+
+.hero-left{
+    width:50%;
+    position:relative;
+    z-index:2;
+}
+
+.hero-small{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:#ddd;
+
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.hero-small::before{
+    content:"";
+
+    width:65px;
+    height:5px;
+
+    background:repeating-linear-gradient(
+        45deg,
+        #a8e600 0px,
+        #a8e600 6px,
+        transparent 6px,
+        transparent 11px
+    );
+}
+
+.hero h1{
+    font-size:72px;
+    line-height:.92;
+
+    margin:28px 0;
+
+    font-weight:900;
+
+    letter-spacing:-3px;
+}
+
+.hero h1 .green{
+    color:#a8e600;
+}
+
+.hero h1 .white{
+    color:#fff;
+}
+
+.hero-desc{
+    max-width:560px;
+
+    color:#aaa;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-bottom:35px;
+}
+
+.hero-btn{
+    display:inline-block;
+
+    padding:18px 38px;
+
+    background:#a8e600;
+
+    color:#080a0e;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    font-size:16px;
+
+    clip-path:polygon(
+        0 0,
+        90% 0,
+        100% 30%,
+        100% 100%,
+        0 100%
+    );
+
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 35px rgba(168,230,0,.2);
+}
+
+.hero-right{
+    width:48%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.bike-glow{
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(168,230,0,.23),
+        rgba(168,230,0,.05),
+        transparent 70%
+    );
+}
+
+.hero-bike{
+    position:relative;
+
+    width:620px;
+    max-width:100%;
+
+    filter:
+        drop-shadow(0 20px 30px rgba(0,0,0,.5))
+        drop-shadow(0 0 25px rgba(168,230,0,.08));
+
+    z-index:2;
+}
+
+/* ================= GREEN LINE ================= */
+
+.green-line{
+    width:100%;
+    height:4px;
+    background:#a8e600;
+}
+
+/* ================= CATEGORY BAR ================= */
+
+.categories{
+    padding:60px 5% 30px;
+
+    background:#11141c;
+}
+
+.category-title{
+    text-align:center;
+
+    font-size:18px;
+    font-weight:900;
+
+    margin-bottom:35px;
+}
+
+.category-title span{
+    color:#a8e600;
+}
+
+.category-grid{
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:18px;
+}
+
+.category{
+    height:100px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        #161a23,
+        #0c1017
+    );
+
+    border:1px solid #282e39;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.category::after{
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:3px;
+
+    bottom:0;
+    left:0;
+
+    background:#a8e600;
+
+    transform:translateX(-100%);
+
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-5px);
+    border-color:#a8e600;
+}
+
+.category:hover::after{
+    transform:translateX(0);
+}
+
+.category span{
+    font-size:22px;
+    font-weight:900;
+    text-align:center;
+}
+
+/* ================= ABOUT / DOMINANCE ================= */
+
+.about{
+    min-height:600px;
+
+    padding:80px 5%;
+
+    background:#10131b;
+}
+
+.about-container{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+
+    max-width:1300px;
+
+    margin:auto;
+}
+
+.about-image{
+    min-height:390px;
+
+    border:2px solid #a8e600;
+
+    background:
+        linear-gradient(
+            rgba(10,15,20,.25),
+            rgba(10,15,20,.25)
+        ),
+        url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1100&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+}
+
+.about-image::before{
+    content:"BIKE";
+
+    position:absolute;
+
+    left:25px;
+    top:25px;
+
+    color:#a8e600;
+
+    font-size:18px;
+    font-weight:900;
+
+    letter-spacing:4px;
+}
+
+.about-text{
+    padding:20px;
+}
+
+.tabs{
+    display:flex;
+
+    margin-bottom:35px;
+
+    background:#1d2a16;
+}
+
+.tab{
+    padding:18px 28px;
+
+    font-weight:900;
+    font-size:15px;
+
+    color:#fff;
+}
+
+.tab.active{
+    color:#a8e600;
+}
+
+.about h2{
+    font-size:46px;
+    line-height:1.05;
+
+    margin-bottom:25px;
+}
+
+.about h2 span{
+    color:#a8e600;
+}
+
+.about p{
+    color:#aaa;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+.features{
+    margin-top:30px;
+}
+
+.feature{
+    display:flex;
+    gap:15px;
+
+    align-items:center;
+
+    margin:16px 0;
+
+    font-weight:700;
+}
+
+.check{
+    width:18px;
+    height:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#a8e600;
+    color:#000;
+
+    border-radius:50%;
+
+    font-size:12px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    padding:90px 5%;
+
+    background:#0d1017;
+}
+
+.products-heading{
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.products-heading p{
+    color:#a8e600;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.products-heading h2{
+    font-size:44px;
+
+    margin-top:12px;
+}
+
+.products-grid{
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+}
+
+.product{
+    background:#151922;
+
+    border:1px solid #252b36;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+
+    border-color:#a8e600;
+}
+
+.product-img{
+    height:250px;
+
+    overflow:hidden;
+}
+
+.product-img img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.product:hover .product-img img{
+    transform:scale(1.08);
+}
+
+.product-content{
+    padding:22px;
+}
+
+.product-content h3{
+    font-size:20px;
+
+    margin-bottom:12px;
+}
+
+.product-content p{
+    color:#999;
+
+    font-size:14px;
+
+    line-height:1.5;
+}
+
+.price{
+    font-size:22px !important;
+
+    color:#a8e600 !important;
+
+    font-weight:900 !important;
+
+    margin:14px 0 !important;
+}
+
+.buy-btn{
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    background:#a8e600;
+
+    color:#000;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:#c4ff46;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    padding:90px 20px;
+
+    text-align:center;
+
+    background:#11141c;
+}
+
+.contact h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.contact p{
+    color:#999;
+    margin:10px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:25px;
+
+    text-align:center;
+
+    background:#05070a;
+
+    color:#777;
+
+    border-top:1px solid #202630;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+    .navbar{
+        padding:0 25px;
+    }
+
+    .nav-links{
+        gap:15px;
+    }
+
+    .hero{
+        padding:70px 5%;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        height:70px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        margin-top:70px;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:70px 20px;
+
+        gap:50px;
+    }
+
+    .hero-left,
+    .hero-right{
+        width:100%;
+    }
+
+    .hero-small{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero-desc{
+        font-size:15px;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+    }
+
+    .about h2{
+        font-size:38px;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-symbol"></div>
+
+        <div class="logo-text">
+            RIDER<span>X</span>
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="#">HOME</a>
+
+        <a href="#shop">SHOP</a>
+
+        <a href="#about">ABOUT</a>
+
+        <a href="#contact">CONTACT</a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+        <div class="search">⌕</div>
+
+        <div class="cart">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="hero-small">
+            WELCOME TO
+        </div>
+
+
+        <h1>
+
+            <span class="red">
+                RIDER X
+            </span>
+
+            <br>
+
+            <span class="black">
+                OFFICIAL
+            </span>
+
+        </h1>
+
+
+        <p class="hero-desc">
+
+            UNLOCK THE ULTIMATE
+            <strong style="color:#008ae6;">
+                BIKING EXPERIENCE
+            </strong>
+
+            WITH PREMIUM BIKE
+            ACCESSORIES, RIDING GEAR
+            AND PERFORMANCE PRODUCTS.
+
+        </p>
+
+
+        <a href="#shop" class="hero-btn">
+            SHOP NOW
+        </a>
+
+    </div>
+
+
+    <div class="hero-right">
+
+        <div class="bike-glow"></div>
+
+        <img
+            class="hero-bike"
+            src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=85"
+            alt="Bike"
+        >
+
+    </div>
+
+</section>
+
+
+<div class="green-line"></div>
+
+
+<!-- ================= CATEGORY ================= -->
+
+<section class="categories">
+
+    <div class="category-title">
+        <span>RIDER X PRATAP</span> OFFICIAL PRODUCTS
+    </div>
+
+
+    <div class="category-grid">
+
+        <div class="category">
+            <span>HELMETS</span>
+        </div>
+
+        <div class="category">
+            <span>GLOVES</span>
+        </div>
+
+        <div class="category">
+            <span>LIGHTING</span>
+        </div>
+
+        <div class="category">
+            <span>RIDING GEAR</span>
+        </div>
+
+        <div class="category">
+            <span>BIKE PARTS</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-container">
+
+
+        <div class="about-image"></div>
+
+
+        <div class="about-text">
+
+            <div class="tabs">
+
+                <div class="tab active">
+                    PREMIUM
+                </div>
+
+                <div class="tab">
+                    QUALITY
+                </div>
+
+                <div class="tab">
+                    PERFORMANCE
+                </div>
+
+            </div>
+
+
+            <h2>
+
+                RIDER X PRATAP
+                <span>
+                    DOMINANCE
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Premium bike accessories made for riders
+                who demand style, comfort and performance.
+                Upgrade your ride with carefully selected
+                accessories designed for everyday riding.
+
+            </p>
+
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="check">✓</div>
+                    Premium Quality Products
+                </div>
+
+                <div class="feature">
+                    <div class="check">✓</div>
+                    Fast Delivery Across India
+                </div>
+
+                <div class="feature">
+                    <div class="check">✓</div>
+                    Trusted By Riders
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products" id="shop">
+
+    <div class="products-heading">
+
+        <p>RIDING ESSENTIALS</p>
+
+        <h2>
+            FEATURED PRODUCTS
+        </h2>
+
+    </div>
+
+
+    <div class="products-grid">
+
+
+        <div class="product">
+
+            <div class="product-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=900&q=80"
+                    alt="Helmet"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <h3>Premium Helmet</h3>
+
+                <p>
+                    High quality protective riding helmet.
+                </p>
+
+                <p class="price">
+                    ₹2,499
+                </p>
+
+                <button class="buy-btn" onclick="addCart()">
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1591328833209-e0a7c33b4f0e?auto=format&fit=crop&w=900&q=80"
+                    alt="Gloves"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <h3>Riding Gloves</h3>
+
+                <p>
+                    Comfortable and durable riding gloves.
+                </p>
+
+                <p class="price">
+                    ₹899
+                </p>
+
+                <button class="buy-btn" onclick="addCart()">
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=900&q=80"
+                    alt="Lights"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <h3>LED Bike Lights</h3>
+
+                <p>
+                    Bright lighting for safer night rides.
+                </p>
+
+                <p class="price">
+                    ₹599
+                </p>
+
+                <button class="buy-btn" onclick="addCart()">
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=900&q=80"
+                    alt="Bike Accessory"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <h3>Bike Accessories</h3>
+
+                <p>
+                    Essential accessories for your motorcycle.
+                </p>
+
+                <p class="price">
+                    ₹1,499
+                </p>
+
+                <button class="buy-btn" onclick="addCart()">
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <h2>
+        CONTACT  RIDER X PRATAP
+            </h2>
+
+    <p>
+        WhatsApp: +91 98169 35899
+    </p>
+
+    <p>
+        Email: support@fg254368@gmail.com
+    </p>
+
+</section>
+
+
+<footer>
+
+    © 2026 RIDER X PRATAP  — BIKE ACCESSORIES
+
+</footer>
+
+
+<script>
+
+let cart = 0;
+
+function addCart(){
+
+    cart++;
+
+    document.getElementById("cartCount").innerText = cart;
+
+}
+
+</script>
+
+
+</body>
+</html>
